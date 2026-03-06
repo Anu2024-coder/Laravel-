@@ -1,0 +1,22 @@
+models-backend logic,interacts with database
+controller-brain of mvc, handles request flow
+views-frontend
+middleware-acts between controller and model
+
+advantages of mvc-code reusabilty,scalability,testability,separation of concerns
+
+laravel-open source web framework written in php
+
+blade template engine in laravel-
+
+eloquent ORM-
+
+Artisan-cli that comes bundeled with laravel
+
+features of laravel-
+
+composer-dependancy manager for laravel
+
+cache- folder is used for encapsulation(data hiding)
+app.php in bootstrap folder is for routing
+app.php in config folder is for configuration
