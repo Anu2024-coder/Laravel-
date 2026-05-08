@@ -3,7 +3,10 @@
 use App\Http\Controllers\uploadYZController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\uploadYZControllerController;
+use App\Http\Controllers\demoController;
 use App\Http\Controllers\EmailYZController;
+use App\Http\Controllers\sessionYZController;
+use App\Http\Controllers\EmployeeController;
 use App\Mail\TestingYZMail;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
@@ -116,4 +119,61 @@ use Illuminate\Http\Request;
 // });
 
 //Sending emails
-Route::get('/abc',[EmailYZController::class,'send']);
+//Route::get('/abc',[EmailYZController::class,'send']);
+
+
+//Task
+//You are working as a Laravel developer in a company called HireFast The HR team reports a problem
+//"Many candidates are uploading wrong files like images, large files, or empty submissions. This is breaking our system"
+//The company wants to strictly validate resume uploads before accepting them.
+
+//Session 
+// Route::view('/loginform','MyFormYZ');
+// Route::post('/login',[sessionYZController::class,'login']);
+// Route::get('/form',function(){
+//     return view('sessionYZ');
+// });
+// Route::get('/logout',[sessionYZController::class,'logout']);
+
+//steps- session topic adding,storing and deleting in laravel form
+//step1 - create a basic form with input field makw sure @csrf is used inside form so that 419 page expired will not occur
+//step2 - make sure form use POST method and there will be same action used inside form which is used in the post route for controller
+//step3 - create a controller with two functions login and logout , login will add the session and logout will flush the session
+//step4 - create a sessionYZ blade which is going to check for session value
+//step5 - Add suitable imports and route in the web.php
+
+
+//Task - Needs to be implemented by students-IN-BUILT
+//Simran, a software developer at Google is building an employee registration system using Laravel. To ensure that only valid and secure data is entered she applies several constraints through in-bullt validation rules
+//a)She makes the name field mandatory, allowing only alphabetic characters with a minimum length of three characters.
+
+//b)the email field is also required and must follow a proper email format while being unique in the database to avoid duplicaton
+
+//c)The password held must contain at least six characters and should match the confirmation field to ensure correctness.
+
+//d)Additionally the age field is required, must be numeric, and should be at least 18. By applying these constraints.
+//Simran ensures data accuracy, consistency, and security before storing the information in the system.
+//Note- No regex will be used.
+
+//Route::post('/register', [employeeController::class, 'store']);
+
+//Task 2-
+
+// Siya working at Google, is developing a secure employee onboarding system using Laravel.
+// Since the system handles sensitive company data, she applies strong in-built validation constraints to ensure maximum security and correctness a) The name field is mandatory, must contain only alphabets and spaces, and should be between 5 to 10 characters. b) The email field is regived must follow a valid email format, belong to a specific company domain (g..
+// google.com) and must be unique in the database.c) The password field is compulsory, mus be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and oneapestal character, and must match the confirmation field.
+// ai The phone number field is required, must be numeric, and exactly 10 digits long.
+// el Additionally the life of birth field is required and must ensure that the employee is at least years old
+// 24
+// Do this via in-built and custom nule class
+
+//query builder using form
+Route::get('/form', [demoController::class, 'show']);
+Route::post('/insert', [demoController::class, 'insert']);
+
+Route::get('/read', [demoController::class, 'read']);
+
+Route::get('/edit/{id}', [demoController::class, 'edit']);
+Route::post('/update/{id}', [demoController::class, 'update']);
+
+Route::get('/delete/{id}', [demoController::class, 'delete']);

@@ -1,0 +1,11 @@
+ --->steps for crud operations using query builder with form(dynamic)
+ 1 start xamp start apache mysql open admin page
+ 2 open .env file , configure db_Conn=mysql and also set db_name=as per ur choice
+ 3 php artisan make:migration create_teachers_table
+ 4 open migration file,add suitable columns
+ 5 write php artisan migrate:fresh
+ 6 create controller then add 6 functions-show,insert,read,update,delete,edit
+ a)use query builder for crud
+ b)import use illuminate\support\facades\DB;
+ 7 create 3 views, first view for basic form rendering, second view for read, and third for edit
+ 8 add suitable imports and routes web.php
